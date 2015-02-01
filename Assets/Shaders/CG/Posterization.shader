@@ -1,4 +1,4 @@
-﻿Shader "Custom/Posterization" {
+﻿Shader "Hidden/Posterization" {
 Properties {
 	_MainTex ("Base (RGB)", 2D) = "white" {}
 	_Gamma("Gamma",Range(0.1,1.0)) = 0.6
@@ -12,7 +12,7 @@ SubShader {
 CGPROGRAM
 #pragma vertex vert_img
 #pragma fragment frag
-#pragma fragmentoption ARB_precision_hint_fastest 
+//#pragma fragmentoption ARB_precision_hint_fastest 
 #include "UnityCG.cginc"
 
 uniform sampler2D _MainTex; 
@@ -27,7 +27,7 @@ fixed4 frag (v2f_img i) : SV_Target
   	c = c * _NumColors;
   	c = floor(c);
   	c = c / _NumColors;
-  	c = pow(c, half3(1.0/_Gamma));
+  	c = pow(c, half3(1.0/_Gamma,0.0,0.0));
   	finalColor.rgb = c;
   	return finalColor;
 }
@@ -35,7 +35,6 @@ ENDCG
 
 	}
 }
-
 Fallback off
 
 }

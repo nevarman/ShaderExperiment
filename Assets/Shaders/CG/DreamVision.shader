@@ -8,6 +8,7 @@
 		
 		CGPROGRAM
 		#pragma surface surf Lambert
+		
 
 		sampler2D _MainTex;
 
@@ -31,10 +32,10 @@
   			c += tex2D(_MainTex, uv-0.003);
   			c += tex2D(_MainTex, uv-0.005);
   			c += tex2D(_MainTex, uv-0.007);
-  			c += tex2D(_MainTex, uv-0.009);
-  			c += tex2D(_MainTex, uv-0.011);
+//  			c += tex2D(_MainTex, uv-0.009);
+//  			c += tex2D(_MainTex, uv-0.011);
   			
-  			c.rgb = vec3((c.r+c.g+c.b)/3.0);
+  			c.rgb = ((c.r+c.g+c.b)/3.0);
   			c = c / 9.5;
   			o.Albedo = c.rgb;
 		}

@@ -14,7 +14,7 @@
 		
 		CGPROGRAM
 		#pragma surface surf Lambert
-
+		
 		sampler2D _MainTex;
 		fixed4 _Tint;
 		uniform float _Blend; 

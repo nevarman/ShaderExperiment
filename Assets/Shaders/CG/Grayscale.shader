@@ -23,7 +23,7 @@
 			half4 c = tex2D (_MainTex, IN.uv_MainTex);			
             //GRAYSCALE
             //create our sepia tone from some constant value
-            half3 sepiaColor = vec3(dot(c.rgb, half3(0.299, 0.587, 0.114)));
+            half3 sepiaColor = half3(dot(c.rgb, half3(0.299, 0.587, 0.114)));
             c.rgb = mix(c.rgb, sepiaColor, _Gray);
             //final colour, multiplied by vertex colour           
             o.Albedo = c.rgb ;//*_Color;

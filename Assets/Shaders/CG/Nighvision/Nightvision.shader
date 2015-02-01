@@ -48,7 +48,7 @@ fixed4 frag (v2f_img i) : SV_Target
   	float lum = (0.2126*cColor.r + 0.7152*cColor.g + 0.0722*cColor.b);//luminance value (determine brigthness, based on wikipedia)
   	// if the pixel is bright leave it bright
 //  	if (lum < _LuminanceThreshold) c *= _ColorAmplification; // dont use if
-	float x = lerp( _ColorAmplification, 1f, renorm(lum, _LuminanceThreshold+0.001, _LuminanceThreshold-0.001));
+	float x = lerp( _ColorAmplification, 1.0, renorm(lum, _LuminanceThreshold+0.001, _LuminanceThreshold-0.001));
   	cColor *= x;
   	
   	half3 greenColor = half3(0.0, 1.0, 0.0);// green color for nightvision

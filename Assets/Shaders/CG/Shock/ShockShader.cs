@@ -20,11 +20,11 @@ public class ShockShader : MonoBehaviour {
 			{
 				if(hit.collider.gameObject == gameObject)
 				{
-					renderer.material.SetVector("_Center",new Vector4(hit.point.x,hit.point.y,0f,0f));
+					Vector3 pos = new Vector3(hit.point.x-transform.position.x+0.5f,hit.point.y-transform.position.y+0.5f,0f);
+					renderer.material.SetVector("_Center",new Vector4(pos.x,pos.y,0f,0f));
 					renderer.material.SetFloat("_WaveTime",0f);
 					animate = true;
 				}
-
 			}
 
 		}
