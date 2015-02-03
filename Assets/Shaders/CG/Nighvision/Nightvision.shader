@@ -26,7 +26,6 @@ uniform sampler2D _MaskTex;
 uniform float _ElapsedTime; // seconds
 uniform float _LuminanceThreshold; 
 uniform float _ColorAmplification,_LightTreshold,_Zoom;
-//uniform float4 _LightColor0;
 
 float positive(float x) {
     return 0.5*(x + abs(x));
@@ -49,7 +48,7 @@ fixed4 frag (v2f_img i) : SV_Target
 //  	if (lum < _LuminanceThreshold) c *= _ColorAmplification; // dont use if
 	float x = lerp( _ColorAmplification,1.0,renorm(lum,_LuminanceThreshold+0.001,_LuminanceThreshold-0.001));// if the pixel is bright leave it bright
   	cColor *= x;
-  	float lightIntensity = lerp(1.0,4.0,renorm(_LightColor0.r,_LightTreshold+0.01,_LightTreshold-0.01));// lightning intensity, if we look at the light nightvision should explode to our eyes !
+  	float lightIntensity = lerp(1.0,5.0,renorm(_LightColor0.r,_LightTreshold+0.01,_LightTreshold-0.01));// lightning intensity, if we look at the light nightvision should explode to our eyes !
   	half3 greenColor = half3(0.0,1.0,0.0);// green color for nightvision
   	finalColor.rgb = (cColor + (noise*0.2)) * greenColor * mask *lightIntensity;// calculate final color
   	return finalColor;

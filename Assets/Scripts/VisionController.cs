@@ -9,6 +9,7 @@ public class VisionController : MonoBehaviour {
 	float zoom;
 	// Use this for initialization
 	void Start () {
+		Screen.showCursor = false;
 		nightVision = FindObjectOfType<Nightvision>();
 		heatVision = FindObjectOfType<HeatVision>();
 		thermalVision = FindObjectOfType<ThermalVision>();
