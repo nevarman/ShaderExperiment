@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ThermalVisionEventReceiver : MonoBehaviour {
+public class ThermalVisionPlayerEventReceiver : MonoBehaviour {
 	private Material m_Material;
 //	private Shader _initShader,_unlit;
 	void Start()
