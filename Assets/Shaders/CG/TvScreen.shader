@@ -31,7 +31,7 @@
 			col *= _Tint;
 		    col *= 0.9+0.1*sin(_LineSpeed*_Time.y+IN.uv_MainTex.y*_Distortion);//LineMotion
 			col *= 0.97+0.03*sin(_Flicker*_Time.y);// Flicker
-			col = mix( col, c, _Blend );
+			col = lerp( col, c, _Blend );
 			
 			o.Albedo = col;
 			o.Alpha = c.a;

@@ -27,6 +27,7 @@ uniform float _ElapsedTime; // seconds
 uniform float _LuminanceThreshold; 
 uniform float _ColorAmplification,_LightTreshold,_Zoom;
 
+fixed4 finalColor;
 float positive(float x) {
     return 0.5*(x + abs(x));
 }
@@ -35,7 +36,7 @@ float renorm(float x, float upper, float lower) {
 }
 fixed4 frag (v2f_img i) : SV_Target
 {	
-	fixed4 finalColor;
+	
   	_ElapsedTime += _Time.y;
   	half2 uv;   
   	uv.x = 0.9*sin(_ElapsedTime*50.0);// shake uv with time for noise texture                                         

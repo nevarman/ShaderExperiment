@@ -7,7 +7,7 @@ Properties {
     //_BumpMap ("Normalmap", 2D) = "bump" {}
     _Emissive("Heat Map", 2D) = "black" {}
 //    _EmissiveColor("_EmissiveColor", Color) = (1,1,1,1)
-    _EmissiveIntensity("Intensity", Range(0,1) ) = 0.5
+    _EmissiveIntensity("Intensity", Range(0,5) ) = 0.5
 }
 SubShader {
     Tags { "RenderType"="Opaque" }
